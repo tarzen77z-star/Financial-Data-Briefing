@@ -28,17 +28,17 @@
     a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}
     button,input{font:inherit}
     .wrap{width:min(1180px,calc(100% - 40px));margin:0 auto}
-    .mast{padding:46px 0 30px;border-bottom:1px solid var(--rule)}
+    .mast{padding:30px 0 22px;border-bottom:1px solid var(--rule)}
     .mast-grid{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:46px;align-items:end}
     .stamp{font:600 12px/1.2 "IBM Plex Mono",monospace;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
     h1{font-family:"Libre Baskerville",serif;font-size:clamp(35px,5.5vw,69px);line-height:1.05;letter-spacing:-.035em;margin:0;max-width:850px}
     .dek{font-size:clamp(17px,2vw,22px);line-height:1.45;color:var(--muted);max-width:780px;margin:22px 0 0}
     .edition{border-left:4px solid var(--accent);padding:4px 0 4px 18px;color:var(--muted);font-size:14px}
     .edition strong{display:block;color:var(--ink);font:600 13px/1.3 "IBM Plex Mono",monospace;margin-bottom:7px}
-    .signal-strip{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--rule);background:var(--panel)}
-    .signal{padding:24px clamp(18px,3vw,34px);border-right:1px solid var(--rule)}
-    .signal:last-child{border-right:0}.signal b{display:block;font-family:"Libre Baskerville",serif;font-size:30px;line-height:1;color:var(--navy);margin-bottom:8px}.signal span{font-size:13px;color:var(--muted)}
-    .main-grid{display:grid;grid-template-columns:255px minmax(0,1fr);gap:42px;padding:38px 0 72px}
+    .signal-strip{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--rule);background:var(--panel)}
+    .signal{padding:18px clamp(18px,3vw,34px);border-right:1px solid var(--rule)}
+    .signal:last-child{border-right:0}.signal:nth-child(3n){border-right:0}.signal:nth-child(-n+3){border-bottom:1px solid var(--rule)}.signal b{display:block;font-family:"Libre Baskerville",serif;font-size:27px;line-height:1;color:var(--navy);margin-bottom:8px}.signal span{font-size:13px;color:var(--muted)}
+    .main-grid{display:grid;grid-template-columns:255px minmax(0,1fr);gap:42px;padding:28px 0 72px}
     aside{position:sticky;top:18px;align-self:start}
     .filter-title,.section-label{font:600 11px/1.2 "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
     .search{width:100%;margin:13px 0 18px;padding:11px 12px;border:1px solid var(--rule-strong);border-radius:3px;background:var(--panel);color:var(--ink);outline:none}.search:focus{border-color:var(--teal);box-shadow:0 0 0 3px var(--soft-teal)}
@@ -62,8 +62,38 @@
     .watchlist{margin-top:32px;background:var(--panel);border:1px solid var(--rule);padding:25px}.watchlist h2{font-family:"Libre Baskerville",serif;font-size:24px;margin:4px 0 18px}.watchlist ul{margin:0;padding:0;list-style:none}.watchlist li{display:grid;grid-template-columns:160px 1fr;gap:14px;padding:12px 0;border-top:1px solid var(--rule);font-size:14px}.watchlist b{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--accent)}
     footer{border-top:1px solid var(--rule);padding:26px 0 46px;color:var(--faint);font-size:12px}.footer-grid{display:flex;justify-content:space-between;gap:20px}.footer-grid p{max-width:760px;margin:0}
     .hidden{display:none!important}
-    @media(max-width:820px){.wrap{width:min(100% - 28px,720px)}.mast{padding-top:30px}.mast-grid{grid-template-columns:1fr;gap:24px}.edition{border-left:0;border-top:3px solid var(--accent);padding:14px 0 0}.signal-strip{grid-template-columns:1fr 1fr}.signal:nth-child(2){border-right:0}.signal:nth-child(-n+2){border-bottom:1px solid var(--rule)}.main-grid{grid-template-columns:1fr;gap:28px}.main-grid aside{position:static}.takeaways{grid-template-columns:1fr 1fr}.company-head{grid-template-columns:1fr;gap:7px}.item{grid-template-columns:118px minmax(0,1fr)} }
+    @media(max-width:820px){.wrap{width:min(100% - 28px,720px)}.mast{padding-top:30px}.mast-grid{grid-template-columns:1fr;gap:24px}.edition{border-left:0;border-top:3px solid var(--accent);padding:14px 0 0}.signal-strip{grid-template-columns:1fr 1fr}.signal:nth-child(3n){border-right:1px solid var(--rule)}.signal:nth-child(2n){border-right:0}.signal:nth-child(-n+4){border-bottom:1px solid var(--rule)}.main-grid{grid-template-columns:1fr;gap:28px}.main-grid aside{position:static}.takeaways{grid-template-columns:1fr 1fr}.company-head{grid-template-columns:1fr;gap:7px}.item{grid-template-columns:118px minmax(0,1fr)} }
     @media(max-width:560px){.wrap{width:min(100% - 24px,520px)}h1{font-size:38px}.signal{padding:19px 15px}.signal b{font-size:25px}.takeaways{grid-template-columns:1fr}.thesis{padding:24px 20px}.item{grid-template-columns:1fr;gap:7px}.date{margin-top:2px}.watchlist li{grid-template-columns:1fr;gap:5px}.footer-grid{display:block}.footer-grid p+ p{margin-top:10px}.section-head{align-items:start;flex-direction:column;gap:6px}}
+
+    .latest-wrap{padding:28px 0 0}
+    .latest{background:var(--panel);border:1px solid var(--rule);border-top:3px solid var(--accent);padding:26px 28px 24px;box-shadow:var(--shadow)}
+    .latest-head{display:flex;justify-content:space-between;gap:22px;align-items:end;margin-bottom:8px}
+    .latest-head h2{font-family:"Libre Baskerville",serif;font-size:clamp(24px,3vw,30px);margin:5px 0 0;line-height:1.15}
+    .latest-head .fresh{font:600 12px "IBM Plex Mono",monospace;color:var(--accent);white-space:nowrap;padding-bottom:4px}
+    .latest-sum{margin:0 0 20px;color:var(--muted);font-size:15px;max-width:900px}
+    .hl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
+    .hl-card{display:block;background:var(--paper);padding:18px 18px 15px;text-decoration:none;transition:background .15s ease}
+    .hl-card:hover,.hl-card:focus-visible{background:var(--soft-teal)}
+    .hl-meta{display:block;font:600 11px "IBM Plex Mono",monospace;letter-spacing:.07em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+    .hl-card h3{font-size:16.5px;line-height:1.3;margin:0 0 7px}
+    .hl-card p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.45}
+    .hl-go{display:inline-block;margin-top:11px;font:600 12px "IBM Plex Mono",monospace;color:var(--accent)}
+    .latest-why{margin:18px 0 0;font-size:13.5px;color:var(--muted)}
+    .why-link{background:none;border:0;padding:0;cursor:pointer;color:var(--teal);font-weight:600;text-decoration:underline;text-underline-offset:3px;font-size:13.5px}
+    .tabs{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;border-bottom:2px solid var(--rule-strong);margin-bottom:26px}
+    .tab-btn{background:transparent;border:0;border-bottom:3px solid transparent;margin-bottom:-2px;padding:10px 13px;cursor:pointer;font:600 14px "IBM Plex Sans",sans-serif;color:var(--muted)}
+    .tab-btn:hover{color:var(--ink)}
+    .tab-btn.active{color:var(--ink);border-bottom-color:var(--accent)}
+    .tabs-note{margin-left:auto;font-size:12.5px;color:var(--faint);padding:8px 0}
+    .signals-note{margin:0 0 20px;color:var(--muted);font-size:14.5px;max-width:760px}
+    #panel-signals .takeaways{margin-bottom:10px}
+    .item{scroll-margin-top:14px}
+    .item.flash{animation:storyflash 2.4s ease}
+    @keyframes storyflash{0%,55%{background:var(--soft-gold)}100%{background:transparent}}
+    .side-signals{display:block;margin-top:14px;background:none;border:0;padding:0;cursor:pointer;color:var(--teal);font:600 12.5px "IBM Plex Sans",sans-serif;text-align:left;text-decoration:underline;text-underline-offset:3px}
+    @media(max-width:980px){.hl-grid{grid-template-columns:1fr 1fr}.tabs-note{display:none}}
+    @media(max-width:560px){.hl-grid{grid-template-columns:1fr}.latest{padding:21px 18px}.latest-head{flex-direction:column;align-items:start;gap:4px}}
+    @media(prefers-reduced-motion:reduce){.item.flash{animation:none}.hl-card{transition:none}}
   </style>
 </head>
 <body>
@@ -82,7 +112,23 @@
     <div class="signal"><b>$7.5B</b><span>AlphaSense valuation after June funding</span></div>
     <div class="signal"><b>5×</b><span>Quarter-on-quarter growth in LSEG MCP consumption, Q3</span></div>
     <div class="signal"><b>~125K</b><span>ASKB users in beta, reported around April</span></div>
-    <div class="signal"><b>600M+</b><span>Entities available through Moody’s intelligence</span></div>
+    <div class="signal"><b>600M+</b><span>Entities available through Moody’s intelligence</span></div><div class="signal"><b>7×</b><span>Sequential growth in FactSet MCP usage; 650+ clients engaged</span></div><div class="signal"><b>21K+</b><span>PitchBook Premium Connector users across 3,000 accounts</span></div>
+  </section>
+
+  <section class="wrap latest-wrap" aria-labelledby="latest-title">
+    <div class="latest">
+      <div class="latest-head"><div><div class="section-label">What’s new</div><h2 id="latest-title">The newest stories, up top</h2></div><span class="fresh">UPDATED THU · OCT 29, 2026</span></div>
+      <p class="latest-sum">Two newly tracked companies surfaced the biggest stories: S&amp;P Global is reviewing the future of Capital IQ, and MSCI redrew index eligibility. Bloomberg pushed its AI into quant coding, and LSEG closed the week with a $3.5B credit-data deal. Skim a card, then jump straight to the full story.</p>
+      <div class="hl-grid">
+        <a class="hl-card story-link" href="#story-sp-global"><span class="hl-meta">S&amp;P Global · Oct 27</span><h3>Strategic review of Capital IQ</h3><p>S&amp;P Global is weighing alternatives — including a possible separation — for Capital IQ, the flagship Market Intelligence desktop.</p><span class="hl-go">Read the full story ↓</span></a>
+        <a class="hl-card story-link" href="#story-bquant"><span class="hl-meta">Bloomberg · Oct 28</span><h3>BQuant Assistant brings AI to quant coding</h3><p>Conversational generation of Python and BQL, notebook debugging and visualizations that can run in BQuant’s secure sandbox.</p><span class="hl-go">Read the full story ↓</span></a>
+        <a class="hl-card story-link" href="#story-msci"><span class="hl-meta">MSCI · Oct 15</span><h3>Index screen excludes “non-operating” companies</h3><p>The new eligibility rule takes effect Nov 30, with the final affected list due Nov 11 — a precedent rival index providers will be measured against.</p><span class="hl-go">Read the full story ↓</span></a>
+        <a class="hl-card story-link" href="#story-lseg-octus"><span class="hl-meta">LSEG · Oct 22</span><h3>$3.535B Octus deal, guidance raised</h3><p>A signed cash acquisition of the credit-intelligence firm, alongside MCP consumption up 5× quarter-on-quarter and a raised FY2026 outlook.</p><span class="hl-go">Read the full story ↓</span></a>
+        <a class="hl-card story-link" href="#story-ravenpack"><span class="hl-meta">RavenPack · Oct 21</span><h3>NVIDIA Nemotron pipeline for backtest-ready data</h3><p>A billion-document archive turned into labeled investment datasets at roughly 39× throughput, live today on Bigdata.com.</p><span class="hl-go">Read the full story ↓</span></a>
+        <a class="hl-card story-link" href="#story-pitchbook-harvey"><span class="hl-meta">PitchBook · Oct 21</span><h3>Harvey connector reaches general availability</h3><p>Private-market data inside legal-workflow AI: 21,000+ users, 3,000 accounts and 10M+ tool calls since the connector launched.</p><span class="hl-go">Read the full story ↓</span></a>
+      </div>
+      <p class="latest-why">New to this briefing? <button class="why-link" type="button" data-goto-signals>See the 8 signals that explain why it matters →</button></p>
+    </div>
   </section>
 
   <main class="wrap main-grid">
@@ -101,34 +147,22 @@
         <div class="select-filter"><label for="dateFilter">Date</label><select id="dateFilter"><option value="all">All dates</option><option value="2026-10-29">October 29, 2026</option><option value="2026-10-28">October 28, 2026</option><option value="2026-10-27">October 27, 2026</option><option value="2026-10-23">October 23, 2026</option><option value="2026-10-22">October 22, 2026</option><option value="2026-10-21">October 21, 2026</option><option value="2026-10-15">October 15, 2026</option><option value="2026-10-14">October 14, 2026</option><option value="2026-10-13">October 13, 2026</option><option value="2026-10-08">October 8, 2026</option><option value="2026-10-07">October 7, 2026</option><option value="2026-10-06">October 6, 2026</option><option value="2026-10-05">October 5 update</option><option value="2026-09-28">September 28 update</option><option value="earlier">Earlier developments</option></select></div>
       </div>
       <p class="aside-note">Snapshot compiled from public company releases, filings and credible press. Links open the original source. Sponsored content was excluded where identifiable.</p>
+      <button class="side-signals" type="button" data-goto-signals>Why this briefing matters — the 8 signals →</button>
     </aside>
 
     <div class="content">
-      <section aria-labelledby="takeaways-title">
-        <div class="section-head"><div><div class="section-label">Executive readout</div><h2 id="takeaways-title">Eight signals that matter</h2></div></div>
-        <div class="thesis"><blockquote>“Own the data the agents cite” is becoming the market’s organizing principle.</blockquote><p>Distribution is shifting from standalone terminals toward licensed data, tools and analytical skills embedded in Copilot, Gemini, ChatGPT and Amazon Quick.</p></div>
-        <div class="takeaways">
-          <article class="takeaway"><span class="num">01</span><h3>Agent distribution is the land grab</h3><p>LSEG, Moody’s, PitchBook and FactSet all expanded into third-party agent platforms in a single quarter. Absence from those surfaces risks losing the workflow entry point.</p></article>
-          <article class="takeaway"><span class="num">02</span><h3>AlphaSense has momentum—and capital</h3><p>A $350M raise, $600M+ ARR, an Accenture channel and multiple agentic launches make it the most acute private challenger.</p></article>
-          <article class="takeaway"><span class="num">03</span><h3>ASKB resets desktop expectations</h3><p>Bloomberg’s large beta, mobile continuity and portable BQL answers establish a new benchmark for research UX.</p></article>
-          <article class="takeaway"><span class="num">04</span><h3>Partnerships may beat pure build</h3><p>FactSet’s Google Cloud alliance will test whether a hyperscaler partnership can turn mid-single-digit ASV growth into acceleration.</p></article>
-          <article class="takeaway"><span class="num">05</span><h3>AI-disruption pressure is financial</h3><p>Elliott’s LSEG stake made the “AI commoditizes data” thesis an activist issue. LSEG’s reacceleration and buybacks offer a counter-playbook.</p></article>
-          <article class="takeaway"><span class="num">06</span><h3>Private markets is the hot zone</h3><p>Deal benchmarks, AI document ingestion and embedded diligence are converging around private-company workflows.</p></article>
-          <article class="takeaway"><span class="num">07</span><h3>New agent economics are emerging</h3><p>RavenPack’s token-priced content model targets the unit cost of AI research, not just the quality of retrieval.</p></article>
-          <article class="takeaway"><span class="num">08</span><h3>Compliance is becoming a feature</h3><p>YCharts ships disclosures and guardrails inside its agent. Advisor platforms will increasingly be judged on governed output, not novelty.</p></article>
-        </div>
-      </section>
-
+      <div class="tabs" role="tablist" aria-label="Briefing views"><button class="tab-btn active" type="button" id="tab-feed" role="tab" aria-selected="true" aria-controls="panel-feed" data-tab="feed">Latest moves</button><button class="tab-btn" type="button" id="tab-signals" role="tab" aria-selected="false" aria-controls="panel-signals" data-tab="signals">Signals that matter</button><span class="tabs-note">Start with what’s new; the signals explain the pattern behind it.</span></div>
+      <div class="tab-panel" id="panel-feed" role="tabpanel" aria-labelledby="tab-feed">
       <section aria-labelledby="moves-title">
-        <div class="section-head"><div><div class="section-label">Company-by-company</div><h2 id="moves-title">Competitive moves</h2></div><span class="count" id="resultCount">65 items</span></div>
+        <div class="section-head"><div><div class="section-label">Full feed · newest first</div><h2 id="moves-title">Competitive moves</h2></div><span class="count" id="resultCount">65 items</span></div>
 
         <section class="company" data-company="daily-update-oct-29">
           <div class="company-head"><h2>Thursday, October 29, 2026</h2><p class="company-intro">Overnight sweep catch-ups after S&amp;P Global and MSCI joined the watchlist on October 28, 2026. These are not October 29 news — both items surfaced because the companies are newly tracked, and are dated to when they were originally announced.</p></div>
-          <article class="item" data-tags="strategy sp-global" data-date="2026-10-27" data-companies="sp-global">
+          <article class="item" id="story-sp-global" data-tags="strategy sp-global" data-date="2026-10-27" data-companies="sp-global">
             <div class="date">OCT 27 · 2026</div>
             <div><h3>S&amp;P Global initiates strategic review of Capital IQ</h3><p>S&amp;P Global announced on its Q3 2026 earnings call on October 27, 2026 that it has initiated a strategic review of alternatives, including potential separation, for Capital IQ and its associated data businesses within Market Intelligence, including the majority of the Kensho data and platforms businesses. The company has engaged advisers, signed nondisclosure agreements with several potential counterparties and received interest from multiple firms, but emphasized no outcome is certain and there is no set timeframe. S&amp;P Global expects to retain RatingsDirect, RatingsXpress and Enterprise Solutions. <a class="source" href="https://www.fool.com/earnings/call-transcripts/2026/10/27/sp-global-spgi-q3-2026-earnings-call-transcript/" target="_blank" rel="noopener">Motley Fool</a></p><p class="impact"><b>Why it matters:</b> Capital IQ is Market Intelligence’s flagship desktop — a separation would reshape MI’s core product lineup.</p><div class="tags"><span class="tag">S&amp;P Global</span><span class="tag strategy">Strategic review</span><span class="tag">Capital IQ</span><span class="tag">Market Intelligence</span><span class="tag">Kensho</span></div></div>
           </article>
-          <article class="item" data-tags="strategy msci" data-date="2026-10-15" data-companies="msci">
+          <article class="item" id="story-msci" data-tags="strategy msci" data-date="2026-10-15" data-companies="msci">
             <div class="date">OCT 15 · 2026</div>
             <div><h3>MSCI adopts non-operating-company index screen</h3><p>MSCI announced on October 15, 2026 that it has adopted a methodology making “non-operating companies” ineligible for inclusion in the MSCI Global Investable Market Indexes. The final list of affected companies is due November 11, 2026, and the changes take effect at the close of November 30, 2026. <a class="source" href="https://www.fxstreet.com/cryptocurrencies/news/msci-adopts-index-exclusion-rules-that-could-oust-strategy-202610160506" target="_blank" rel="noopener">FXStreet</a></p><p class="impact"><b>Why it matters:</b> A rival index provider redrawing eligibility around bitcoin-treasury-style firms sets a precedent S&amp;P Dow Jones Indices will be measured against.</p><div class="tags"><span class="tag">MSCI</span><span class="tag strategy">Methodology</span><span class="tag">Indexes</span><span class="tag">Index eligibility</span></div></div>
           </article>
@@ -136,7 +170,7 @@
 
         <section class="company" data-company="daily-update-oct-28">
           <div class="company-head"><h2>Wednesday, October 28, 2026</h2><p class="company-intro">Daily scan of the preceding 24 hours across the full competitor and partner watchlist. One new item: Bloomberg introduced BQuant Assistant, a conversational AI coding assistant inside BQuant Desktop and BQuant Enterprise. No other genuinely new items surfaced elsewhere on the list.</p></div>
-          <article class="item" data-tags="ai product bloomberg" data-date="2026-10-28" data-companies="bloomberg">
+          <article class="item" id="story-bquant" data-tags="ai product bloomberg" data-date="2026-10-28" data-companies="bloomberg">
             <div class="date">OCT 28 · 2026</div>
             <div><h3>Bloomberg introduces BQuant Assistant</h3><p>Bloomberg introduced BQuant Assistant on October 28, 2026: a domain-grounded conversational AI coding assistant built into BQuant Desktop and BQuant Enterprise. Terminal subscribers can use natural-language prompts to generate Python and Bloomberg Query Language (BQL) code, debug notebooks, build data visualizations, and, with user approval, insert and run code in the secure BQuant sandbox. The assistant is generally available in BQuant Enterprise, and in limited beta in BQuant Desktop at the end of October 2026. It follows Bloomberg’s ASKB conversational interface and Enterprise MCP launches. <a class="source" href="https://www.prnewswire.com/news-releases/bloomberg-introduces-bquant-assistant-to-help-financial-professionals-accelerate-data-analysis-and-coding-workflows-302921533.html" target="_blank" rel="noopener">PR Newswire</a></p><p class="impact"><b>Why it matters:</b> Bloomberg is extending conversational AI from ASKB research answers into hands-on coding inside BQuant—natural-language generation of Python and BQL, notebook debugging and visualizations that can run in its secure sandbox—tightening the link between the Terminal’s data and quantitative workflows that Capital IQ Pro and other analytics platforms also contest.</p><div class="tags"><span class="tag">Bloomberg</span><span class="tag">AI</span><span class="tag">BQuant</span><span class="tag">BQuant Assistant</span><span class="tag">Python</span><span class="tag">BQL</span><span class="tag strategy">General availability</span></div></div>
           </article>
@@ -156,7 +190,7 @@
 
         <section class="company" data-company="daily-update-oct-22">
           <div class="company-head"><h2>Thursday, October 22, 2026</h2><p class="company-intro">Daily scan of the preceding 24 hours across the full competitor and partner watchlist. A big LSEG day: a signed $3.535B acquisition of Octus and a guidance-raising Q3 update heavy on AI traction, plus PitchBook’s Harvey connector reaching general availability.</p></div>
-          <article class="item" data-tags="strategy private lseg" data-date="2026-10-22" data-companies="lseg">
+          <article class="item" id="story-lseg-octus" data-tags="strategy private lseg" data-date="2026-10-22" data-companies="lseg">
             <div class="date">OCT 22 · 2026</div>
             <div><h3>LSEG agrees to acquire Octus for $3.535 billion in cash</h3><p>LSEG has agreed to acquire Octus for $3.535 billion in cash from Permira and Octus management, including founder Kent Collier, who will continue to run the business within LSEG’s Data &amp; Analytics division—converting the talks first confirmed on October 13 into a signed deal. Octus provides credit intelligence, data and workflow tools: founded in 2013 and based in New York, it has more than 900 employees, 750 customers and over 40,000 users, with expected 2026 revenue above $300M, an adjusted EBITDA margin of around 40% and double-digit growth. Completion is expected in H1 2027, subject to regulatory approval; LSEG expects the deal to be EPS neutral in its first full year and accretive thereafter, and said it will transform its presence in credit and private market data. <a class="source" href="https://live.euronext.com/en/financial-news/lseg-buy-octus-35-billion-data-analytics-push" target="_blank" rel="noopener">Reuters via Euronext</a> <a class="source" href="http://www.investegate.co.uk/announcement/rns/london-stock-exchange-group--lseg/lseg-to-acquire-octus/9835254" target="_blank" rel="noopener">Investegate RNS</a> <a class="source" href="https://www.marketsmedia.com/lseg-to-buy-octus-for-3-5bn/" target="_blank" rel="noopener">Markets Media</a></p><p class="impact"><b>Why it matters:</b> LSEG is buying proprietary credit content at scale—900 people and a 40%-margin, double-digit-growth franchise—planting itself deep in leveraged-credit intelligence adjacent to MI’s own credit coverage, rather than relying only on distributing data into third-party agents.</p><div class="tags"><span class="tag">LSEG</span><span class="tag strategy">Acquisition</span><span class="tag">Octus</span><span class="tag">Credit data</span><span class="tag">Private markets</span></div></div>
           </article>
@@ -164,7 +198,7 @@
             <div class="date">OCT 22 · 2026</div>
             <div><h3>LSEG raises FY2026 guidance as AI distribution metrics climb</h3><p>LSEG’s Q3 2026 trading update reported total income up 8.8% organically to £2.4bn, with gross profit of £2.2bn, and raised FY2026 guidance: organic total income excluding recoveries of at least +8% (from 7–7.5%), EBITDA margin expansion of 100–120bps, and equity free cash flow of at least £2.8bn. The AI detail was unusually specific: over two-thirds of the top 50 Data &amp; Analytics customers are now connected to LSEG’s MCP servers, with MCP consumption up 5× quarter-on-quarter; datasets added include transcripts, fixed income indices and risk models, with a majority of data on track to be available by year end; and the OpenAI partnership expanded in Q3. Workspace AI Search ended the quarter with 47,000 users—up 30,000 from mid-July—with average queries per user up 30%, and is now available in Microsoft Teams. Deep Research usage rose 60% in Q3, commercial conversations involving AI rose 50% quarter-on-quarter, and 80% of AI agreements so far involve the purchase of additional datasets. <a class="source" href="https://www.marketsmedia.com/lseg-to-buy-octus-for-3-5bn/" target="_blank" rel="noopener">Markets Media</a> <a class="source" href="https://www.directorstalkinterviews.com/lseg-raises-2026-guidance-after-8-8-q3-income-growth/4121267328" target="_blank" rel="noopener">DirectorsTalk</a> <a class="source" href="https://finadium.com/lseg-reports-25-y-y-growth-for-lch-repoclear-touts-ai-progress-in-q3/" target="_blank" rel="noopener">Finadium</a></p><p class="impact"><b>Why it matters:</b> LSEG is quantifying the agent-distribution thesis—MCP connections are converting into incremental dataset purchases—and the raised guidance gives it a financial counter to the “AI commoditizes data” narrative behind the activist pressure.</p><div class="tags"><span class="tag">LSEG</span><span class="tag strategy">Results</span><span class="tag">AI</span><span class="tag">MCP</span><span class="tag strategy">Guidance</span><span class="tag">Q3 2026</span></div></div>
           </article>
-          <article class="item" data-tags="ai product private pitchbook" data-date="2026-10-21" data-companies="pitchbook">
+          <article class="item" id="story-pitchbook-harvey" data-tags="ai product private pitchbook" data-date="2026-10-21" data-companies="pitchbook">
             <div class="date">OCT 21 · 2026</div>
             <div><h3>PitchBook Premium Connector integration with Harvey reaches general availability</h3><p>PitchBook’s Data Premium Connector integration with Harvey is now generally available, following a first announcement in June and a beta period since. Mutual customers can access PitchBook private-market data inside Harvey’s legal AI platform for precedent-deal research—financing history, terms and cap tables—client discovery and investment-committee preparation. Since the Premium Connector’s late-2025 launch it has reached more than 21,000 users across 3,000 accounts and over 10M tool calls, with usage up roughly 2,000% year to date, tool calls up 267% in the last six months, and more than 300 service-provider accounts. <a class="source" href="https://www.businesswire.com/news/home/20261021101326/en/PitchBook-Data-Premium-Connector-Integration-with-Harvey-Now-Generally-Available-as-AI-Adoption-of-PitchBook-Data-Grows" target="_blank" rel="noopener">BusinessWire</a></p><p class="impact"><b>Why it matters:</b> PitchBook’s data is becoming embedded in legal-workflow AI, not just investor tools—expanding the surface where its private-markets dataset is the cited layer, into deal-lawyer workflows MI does not currently contest.</p><div class="tags"><span class="tag">PitchBook</span><span class="tag">AI</span><span class="tag">Harvey</span><span class="tag">Private markets</span><span class="tag strategy">General availability</span></div></div>
           </article>
@@ -176,7 +210,7 @@
 
         <section class="company" data-company="daily-update-oct-21">
           <div class="company-head"><h2>Wednesday, October 21, 2026</h2><p class="company-intro">Daily scan of the preceding 24 hours across the full competitor and partner watchlist. Two new items: RavenPack’s NVIDIA Nemotron-powered pipeline for backtest-ready datasets on Bigdata.com, and Moody’s Q3 2026 results—a miss on both lines.</p></div>
-          <article class="item" data-tags="ai product ravenpack" data-date="2026-10-21" data-companies="ravenpack">
+          <article class="item" id="story-ravenpack" data-tags="ai product ravenpack" data-date="2026-10-21" data-companies="ravenpack">
             <div class="date">OCT 21 · 2026</div>
             <div><h3>RavenPack introduces NVIDIA Nemotron-powered pipeline for backtest-ready investment datasets</h3><p>RavenPack has introduced a pipeline on Bigdata.com that turns its archive—more than 1 billion documents spanning 20+ years—into backtest-ready investment datasets, using an NVIDIA Nemotron model fine-tuned for financial labeling. RavenPack distilled NVIDIA Nemotron 3 Super 120B into Nemotron 3 Nano 4B via LoRA and used it to label 845,220 excerpts from news and earnings transcripts covering 1,642 companies in 0.7 hours on two NVIDIA H200 GPUs: about 39× the teacher model’s throughput, at 63% lower full-history labeling cost and 96% lower cost on subsequent passes, while matching the teacher on 94.05% of chunk-level and 95.90% of sentence-level labels. The Bigdata.com search API, with bigdata-smart-batching, cut query counts by over 90%. In a worked example, a market-share gain/loss signal backtested from January 2016 to October 2026 produced an information ratio of 1.18 and 8.63% annualized excess return at sentence level, versus 0.41 and 3.78% for relevance-weighted sentiment alone. The pipeline is available today to Bigdata.com clients; Peter Hafez, RavenPack’s Chief Data Scientist, fronted the announcement. <a class="source" href="https://www.prnewswire.com/news-releases/ravenpack-introduces-nvidia-nemotron-powered-pipeline-for-backtest-ready-investment-datasets-on-bigdatacom-302915393.html" target="_blank" rel="noopener">PR Newswire</a></p><p class="impact"><b>Why it matters:</b> RavenPack is industrializing dataset creation—converting a billion-document archive into backtest-ready signals at a fraction of prior labeling cost—which pressures MI’s own alternative-data and quantitative dataset economics and extends its token-priced content model into full signal production.</p><div class="tags"><span class="tag">RavenPack</span><span class="tag">AI</span><span class="tag">NVIDIA</span><span class="tag">Bigdata.com</span><span class="tag">Datasets</span></div></div>
           </article>
@@ -387,6 +421,24 @@
           <li><b>VISIBLE ALPHA</b><span>Not a competitor: S&amp;P Global acquired it in 2024. Its expansion inside Capital IQ Pro is an internal growth lever, not an external threat.</span></li>
         </ul>
       </section>
+      </div>
+      <div class="tab-panel hidden" id="panel-signals" role="tabpanel" aria-labelledby="tab-signals">
+        <p class="signals-note">The background brief: the eight forces behind the daily moves. Read it once to understand why this briefing matters — day to day, start with the latest moves.</p>
+      <section aria-labelledby="takeaways-title">
+        <div class="section-head"><div><div class="section-label">Executive readout</div><h2 id="takeaways-title">Eight signals that matter</h2></div></div>
+        <div class="thesis"><blockquote>“Own the data the agents cite” is becoming the market’s organizing principle.</blockquote><p>Distribution is shifting from standalone terminals toward licensed data, tools and analytical skills embedded in Copilot, Gemini, ChatGPT and Amazon Quick.</p></div>
+        <div class="takeaways">
+          <article class="takeaway"><span class="num">01</span><h3>Agent distribution is the land grab</h3><p>LSEG, Moody’s, PitchBook and FactSet all expanded into third-party agent platforms in a single quarter. Absence from those surfaces risks losing the workflow entry point.</p></article>
+          <article class="takeaway"><span class="num">02</span><h3>AlphaSense has momentum—and capital</h3><p>A $350M raise, $600M+ ARR, an Accenture channel and multiple agentic launches make it the most acute private challenger.</p></article>
+          <article class="takeaway"><span class="num">03</span><h3>ASKB resets desktop expectations</h3><p>Bloomberg’s large beta, mobile continuity and portable BQL answers establish a new benchmark for research UX.</p></article>
+          <article class="takeaway"><span class="num">04</span><h3>Partnerships may beat pure build</h3><p>FactSet’s Google Cloud alliance will test whether a hyperscaler partnership can turn mid-single-digit ASV growth into acceleration.</p></article>
+          <article class="takeaway"><span class="num">05</span><h3>AI-disruption pressure is financial</h3><p>Elliott’s LSEG stake made the “AI commoditizes data” thesis an activist issue. LSEG’s reacceleration and buybacks offer a counter-playbook.</p></article>
+          <article class="takeaway"><span class="num">06</span><h3>Private markets is the hot zone</h3><p>Deal benchmarks, AI document ingestion and embedded diligence are converging around private-company workflows.</p></article>
+          <article class="takeaway"><span class="num">07</span><h3>New agent economics are emerging</h3><p>RavenPack’s token-priced content model targets the unit cost of AI research, not just the quality of retrieval.</p></article>
+          <article class="takeaway"><span class="num">08</span><h3>Compliance is becoming a feature</h3><p>YCharts ships disclosures and guardrails inside its agent. Advisor platforms will increasingly be judged on governed output, not novelty.</p></article>
+        </div>
+      </section>
+      </div>
     </div>
   </main>
 
@@ -471,6 +523,56 @@
       companyFilter.addEventListener('change',apply);
       dateFilter.addEventListener('change',apply);
       apply();
+    })();
+  </script>
+  <script>
+    (function(){
+      var feedBtn=document.getElementById('tab-feed'),sigBtn=document.getElementById('tab-signals');
+      var feed=document.getElementById('panel-feed'),sig=document.getElementById('panel-signals');
+      var tabsBar=document.querySelector('.tabs');
+      function show(which){
+        var isFeed=which==='feed';
+        feed.classList.toggle('hidden',!isFeed);
+        sig.classList.toggle('hidden',isFeed);
+        feedBtn.classList.toggle('active',isFeed);
+        sigBtn.classList.toggle('active',!isFeed);
+        feedBtn.setAttribute('aria-selected',String(isFeed));
+        sigBtn.setAttribute('aria-selected',String(!isFeed));
+      }
+      feedBtn.addEventListener('click',function(){show('feed');});
+      sigBtn.addEventListener('click',function(){show('signals');});
+      [].slice.call(document.querySelectorAll('[data-goto-signals]')).forEach(function(el){
+        el.addEventListener('click',function(){show('signals');if(tabsBar)tabsBar.scrollIntoView({behavior:'smooth',block:'start'});});
+      });
+      ['search','companyFilter','dateFilter'].forEach(function(id){
+        var el=document.getElementById(id);
+        if(el){el.addEventListener('input',function(){show('feed');});el.addEventListener('change',function(){show('feed');});}
+      });
+      [].slice.call(document.querySelectorAll('.filter')).forEach(function(b){
+        b.addEventListener('click',function(){show('feed');});
+      });
+      [].slice.call(document.querySelectorAll('a.story-link')).forEach(function(a){
+        a.addEventListener('click',function(e){
+          var hash=a.getAttribute('href');
+          if(!hash||hash.charAt(0)!=='#')return;
+          var target=document.querySelector(hash);
+          if(!target)return;
+          e.preventDefault();
+          var input=document.getElementById('search');
+          if(input&&input.value){input.value='';input.dispatchEvent(new Event('input',{bubbles:true}));}
+          ['companyFilter','dateFilter'].forEach(function(fid){
+            var sel=document.getElementById(fid);
+            if(sel&&sel.value!=='all'){sel.value='all';sel.dispatchEvent(new Event('change',{bubbles:true}));}
+          });
+          var allBtn=document.querySelector('.filter[data-filter="all"]');
+          if(allBtn&&!allBtn.classList.contains('active'))allBtn.click();
+          show('feed');
+          setTimeout(function(){
+            target.scrollIntoView({behavior:'smooth',block:'start'});
+            target.classList.remove('flash');void target.offsetWidth;target.classList.add('flash');
+          },60);
+        });
+      });
     })();
   </script>
 </body>
