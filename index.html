@@ -29,7 +29,7 @@
     button,input{font:inherit}
     .wrap{width:min(1180px,calc(100% - 40px));margin:0 auto}
     .mast{padding:30px 0 22px;border-bottom:1px solid var(--rule)}
-    .mast-grid{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:46px;align-items:end}
+    .mast-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:46px;align-items:end}
     .stamp{font:600 12px/1.2 "IBM Plex Mono",monospace;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
     h1{font-family:"Libre Baskerville",serif;font-size:clamp(35px,5.5vw,69px);line-height:1.05;letter-spacing:-.035em;margin:0;max-width:850px}
     .dek{font-size:clamp(17px,2vw,22px);line-height:1.45;color:var(--muted);max-width:780px;margin:22px 0 0}
@@ -93,6 +93,9 @@
     .side-signals{display:block;margin-top:14px;background:none;border:0;padding:0;cursor:pointer;color:var(--teal);font:600 12.5px "IBM Plex Sans",sans-serif;text-align:left;text-decoration:underline;text-underline-offset:3px}
     @media(max-width:980px){.hl-grid{grid-template-columns:1fr 1fr}.tabs-note{display:none}}
     @media(max-width:560px){.hl-grid{grid-template-columns:1fr}.latest{padding:21px 18px}.latest-head{flex-direction:column;align-items:start;gap:4px}}
+    .signals-brief{border-left:4px solid var(--accent);padding:4px 0 4px 18px;color:var(--muted);font-size:14px;margin-bottom:22px}
+    .signals-brief strong{display:block;color:var(--ink);font:600 13px/1.3 "IBM Plex Mono",monospace;margin-bottom:7px}
+    .signal-strip-in-tab{border:1px solid var(--rule);margin-bottom:30px}
     @media(prefers-reduced-motion:reduce){.item.flash{animation:none}.hl-card{transition:none}}
   </style>
 </head>
@@ -104,21 +107,12 @@
         <h1>Financial Data Briefing</h1>
         <p class="dek">AlphaSense, LSEG, FactSet, Bloomberg and a widening field are turning proprietary data into AI-native workflows—and fighting to become the cited layer beneath enterprise assistants.</p>
       </div>
-      <div class="edition"><strong>Q3 SIGNAL BRIEF</strong>Recent product, AI, partnership and strategic moves from mid-2026 through October 29, 2026.</div>
     </div>
   </header>
 
-  <section class="signal-strip" aria-label="Headline signals">
-    <div class="signal"><b>$7.5B</b><span>AlphaSense valuation after June funding</span></div>
-    <div class="signal"><b>5×</b><span>Quarter-on-quarter growth in LSEG MCP consumption, Q3</span></div>
-    <div class="signal"><b>~125K</b><span>ASKB users in beta, reported around April</span></div>
-    <div class="signal"><b>600M+</b><span>Entities available through Moody’s intelligence</span></div><div class="signal"><b>7×</b><span>Sequential growth in FactSet MCP usage; 650+ clients engaged</span></div><div class="signal"><b>21K+</b><span>PitchBook Premium Connector users across 3,000 accounts</span></div>
-  </section>
-
   <section class="wrap latest-wrap" aria-labelledby="latest-title">
     <div class="latest">
-      <div class="latest-head"><div><div class="section-label">What’s new</div><h2 id="latest-title">The newest stories, up top</h2></div><span class="fresh">UPDATED THU · OCT 29, 2026</span></div>
-      <p class="latest-sum">Two newly tracked companies surfaced the biggest stories: S&amp;P Global is reviewing the future of Capital IQ, and MSCI redrew index eligibility. Bloomberg pushed its AI into quant coding, and LSEG closed the week with a $3.5B credit-data deal. Skim a card, then jump straight to the full story.</p>
+      <div class="latest-head"><div><div class="section-label">What’s new</div><h2 id="latest-title">The newest stories</h2></div><span class="fresh">UPDATED THU · OCT 29, 2026</span></div>
       <div class="hl-grid">
         <a class="hl-card story-link" href="#story-sp-global"><span class="hl-meta">S&amp;P Global · Oct 27</span><h3>Strategic review of Capital IQ</h3><p>S&amp;P Global is weighing alternatives — including a possible separation — for Capital IQ, the flagship Market Intelligence desktop.</p><span class="hl-go">Read the full story ↓</span></a>
         <a class="hl-card story-link" href="#story-bquant"><span class="hl-meta">Bloomberg · Oct 28</span><h3>BQuant Assistant brings AI to quant coding</h3><p>Conversational generation of Python and BQL, notebook debugging and visualizations that can run in BQuant’s secure sandbox.</p><span class="hl-go">Read the full story ↓</span></a>
@@ -151,13 +145,13 @@
     </aside>
 
     <div class="content">
-      <div class="tabs" role="tablist" aria-label="Briefing views"><button class="tab-btn active" type="button" id="tab-feed" role="tab" aria-selected="true" aria-controls="panel-feed" data-tab="feed">Latest moves</button><button class="tab-btn" type="button" id="tab-signals" role="tab" aria-selected="false" aria-controls="panel-signals" data-tab="signals">Signals that matter</button><span class="tabs-note">Start with what’s new; the signals explain the pattern behind it.</span></div>
+      <div class="tabs" role="tablist" aria-label="Briefing views"><button class="tab-btn active" type="button" id="tab-feed" role="tab" aria-selected="true" aria-controls="panel-feed" data-tab="feed">Latest moves</button><button class="tab-btn" type="button" id="tab-signals" role="tab" aria-selected="false" aria-controls="panel-signals" data-tab="signals">Signals that matter</button></div>
       <div class="tab-panel" id="panel-feed" role="tabpanel" aria-labelledby="tab-feed">
       <section aria-labelledby="moves-title">
-        <div class="section-head"><div><div class="section-label">Full feed · newest first</div><h2 id="moves-title">Competitive moves</h2></div><span class="count" id="resultCount">65 items</span></div>
+        <div class="section-head"><div><div class="section-label">Full feed · newest first</div><h2 id="moves-title">Competitive moves</h2></div><span class="count" id="resultCount">66 items</span></div>
 
         <section class="company" data-company="daily-update-oct-29">
-          <div class="company-head"><h2>Thursday, October 29, 2026</h2><p class="company-intro">Overnight sweep catch-ups after S&amp;P Global and MSCI joined the watchlist on October 28, 2026. These are not October 29 news — both items surfaced because the companies are newly tracked, and are dated to when they were originally announced.</p></div>
+          <div class="company-head"><h2>Thursday, October 29, 2026</h2><p class="company-intro">S&amp;P Global opens a strategic review of Capital IQ, MSCI adopts a new index eligibility screen, and S&amp;P Global expands ChatIQ across Capital IQ Pro.</p></div>
           <article class="item" id="story-sp-global" data-tags="strategy sp-global" data-date="2026-10-27" data-companies="sp-global">
             <div class="date">OCT 27 · 2026</div>
             <div><h3>S&amp;P Global initiates strategic review of Capital IQ</h3><p>S&amp;P Global announced on its Q3 2026 earnings call on October 27, 2026 that it has initiated a strategic review of alternatives, including potential separation, for Capital IQ and its associated data businesses within Market Intelligence, including the majority of the Kensho data and platforms businesses. The company has engaged advisers, signed nondisclosure agreements with several potential counterparties and received interest from multiple firms, but emphasized no outcome is certain and there is no set timeframe. S&amp;P Global expects to retain RatingsDirect, RatingsXpress and Enterprise Solutions. <a class="source" href="https://www.fool.com/earnings/call-transcripts/2026/10/27/sp-global-spgi-q3-2026-earnings-call-transcript/" target="_blank" rel="noopener">Motley Fool</a></p><p class="impact"><b>Why it matters:</b> Capital IQ is Market Intelligence’s flagship desktop — a separation would reshape MI’s core product lineup.</p><div class="tags"><span class="tag">S&amp;P Global</span><span class="tag strategy">Strategic review</span><span class="tag">Capital IQ</span><span class="tag">Market Intelligence</span><span class="tag">Kensho</span></div></div>
@@ -165,6 +159,10 @@
           <article class="item" id="story-msci" data-tags="strategy msci" data-date="2026-10-15" data-companies="msci">
             <div class="date">OCT 15 · 2026</div>
             <div><h3>MSCI adopts non-operating-company index screen</h3><p>MSCI announced on October 15, 2026 that it has adopted a methodology making “non-operating companies” ineligible for inclusion in the MSCI Global Investable Market Indexes. The final list of affected companies is due November 11, 2026, and the changes take effect at the close of November 30, 2026. <a class="source" href="https://www.fxstreet.com/cryptocurrencies/news/msci-adopts-index-exclusion-rules-that-could-oust-strategy-202610160506" target="_blank" rel="noopener">FXStreet</a></p><p class="impact"><b>Why it matters:</b> A rival index provider redrawing eligibility around bitcoin-treasury-style firms sets a precedent S&amp;P Dow Jones Indices will be measured against.</p><div class="tags"><span class="tag">MSCI</span><span class="tag strategy">Methodology</span><span class="tag">Indexes</span><span class="tag">Index eligibility</span></div></div>
+          </article>
+          <article class="item" id="story-sp-chatiq" data-tags="ai product sp-global" data-date="2026-10-06" data-companies="sp-global">
+            <div class="date">OCT 06 · 2026</div>
+            <div><h3>S&amp;P Global expands ChatIQ in latest Capital IQ Pro update</h3><p>S&amp;P Global’s latest Capital IQ Pro update, led by ChatIQ, expands the conversational AI experience across company, market, credit and economic data, documents, news and research in one place. ChatIQ Spreadsheets adds an AI Excel modeling assistant with refreshable Capital IQ Pro formulas, and ChatIQ Presentations, in Labs, generates data-driven PowerPoint slides. The update also adds DCF analysis, customizable enterprise value calculations, point-in-time trading comps, private-market benchmarking, global bond data, expanded credit analytics and a Portfolio Insights beta. <a class="source" href="https://www.morningstar.com/news/pr-newswire/20261006ny64900/chatiq-leads-sp-globals-latest-capital-iq-pro-update-with-expanded-ai-powered-research-capabilities" target="_blank" rel="noopener">Morningstar</a></p><p class="impact"><b>Why it matters:</b> ChatIQ extends Capital IQ Pro from conversational answers into the analyst’s core production tools—Excel models and PowerPoint decks—while the added DCF, comps, private-market benchmarking and credit analytics deepen the platform now under strategic review.</p><div class="tags"><span class="tag">S&amp;P Global</span><span class="tag">AI</span><span class="tag">ChatIQ</span><span class="tag">Capital IQ Pro</span><span class="tag strategy">Afternoon sweep</span></div></div>
           </article>
         </section>
 
@@ -423,7 +421,13 @@
       </section>
       </div>
       <div class="tab-panel hidden" id="panel-signals" role="tabpanel" aria-labelledby="tab-signals">
-        <p class="signals-note">The background brief: the eight forces behind the daily moves. Read it once to understand why this briefing matters — day to day, start with the latest moves.</p>
+        <div class="signals-brief"><strong>Q3 SIGNAL BRIEF</strong>Recent product, AI, partnership and strategic moves from mid-2026 through October 29, 2026.</div>
+        <section class="signal-strip signal-strip-in-tab" aria-label="Headline signals">
+          <div class="signal"><b>$7.5B</b><span>AlphaSense valuation after June funding</span></div>
+          <div class="signal"><b>5×</b><span>Quarter-on-quarter growth in LSEG MCP consumption, Q3</span></div>
+          <div class="signal"><b>~125K</b><span>ASKB users in beta, reported around April</span></div>
+          <div class="signal"><b>600M+</b><span>Entities available through Moody’s intelligence</span></div><div class="signal"><b>7×</b><span>Sequential growth in FactSet MCP usage; 650+ clients engaged</span></div><div class="signal"><b>21K+</b><span>PitchBook Premium Connector users across 3,000 accounts</span></div>
+        </section>
       <section aria-labelledby="takeaways-title">
         <div class="section-head"><div><div class="section-label">Executive readout</div><h2 id="takeaways-title">Eight signals that matter</h2></div></div>
         <div class="thesis"><blockquote>“Own the data the agents cite” is becoming the market’s organizing principle.</blockquote><p>Distribution is shifting from standalone terminals toward licensed data, tools and analytical skills embedded in Copilot, Gemini, ChatGPT and Amazon Quick.</p></div>
@@ -442,7 +446,7 @@
     </div>
   </main>
 
-  <footer><div class="wrap footer-grid"><p>Prepared October 29, 2026. Scope emphasizes public developments from approximately the preceding three to six months. Exact dates and caveats are retained where source timing was incomplete or secondary.</p><p>57 tracked moves · 7 no-new-item notes · 1 watch note · 9 competitor groups</p></div></footer>
+  <footer><div class="wrap footer-grid"><p>Prepared October 29, 2026. Scope emphasizes public developments from approximately the preceding three to six months. Exact dates and caveats are retained where source timing was incomplete or secondary.</p><p>58 tracked moves · 7 no-new-item notes · 1 watch note · 9 competitor groups</p></div></footer>
 
   <script>
     (function(){
